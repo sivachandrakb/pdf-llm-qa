@@ -6,10 +6,7 @@ from uncertainty import calculate_entropy, confidence_from_entropy
 st.set_page_config(page_title="U-RAG", layout="wide")
 st.title("🧠 Uncertainty-Aware RAG System")
 
-# ------------------------
-# SESSION STATE INITIALIZE
-# ------------------------
-
+# Session state
 if "rag" not in st.session_state:
     st.session_state.rag = RAGPipeline()
 
@@ -19,10 +16,7 @@ if "indexed" not in st.session_state:
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# ------------------------
-# FILE UPLOAD
-# ------------------------
-
+# Upload PDF
 uploaded_file = st.file_uploader("Upload PDF", type="pdf")
 
 if uploaded_file and not st.session_state.indexed:
@@ -37,10 +31,7 @@ if uploaded_file and not st.session_state.indexed:
     st.session_state.indexed = True
     st.success("PDF Indexed Successfully!")
 
-# ------------------------
-# CHAT INTERFACE
-# ------------------------
-
+# Chat interface
 if st.session_state.indexed:
 
     question = st.chat_input("Ask a question about the document...")
@@ -61,10 +52,7 @@ if st.session_state.indexed:
             "confidence": confidence
         })
 
-# ------------------------
-# DISPLAY CHAT HISTORY
-# ------------------------
-
+# Display chat
 for chat in st.session_state.chat_history:
     with st.chat_message("user"):
         st.write(chat["question"])
