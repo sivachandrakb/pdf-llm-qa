@@ -1,7 +1,7 @@
-streamlit
-sentence-transformers
-faiss-cpu==1.7.4
-transformers
-torch==2.0.1
+streamlit==1.32.0
+sentence-transformers==2.2.2
+transformers==4.38.2
+torch==2.1.0
+faiss-cpu
 PyPDF2
 numpy
