@@ -2,7 +2,7 @@
 # import numpy as np
 # from embeddings import get_embeddings
 # from transformers import AutoTokenizer, AutoModelForCausalLM
-# import torch
+# import torch 
 
 # class RAGPipeline:
 #     def __init__(self):
