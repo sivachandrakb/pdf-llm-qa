@@ -1,7 +1,7 @@
-streamlit==1.32.0
-sentence-transformers==2.2.2
-transformers==4.38.2
-torch==2.1.0
-faiss-cpu
+streamlit
+transformers
+torch
+sentence-transformers
 PyPDF2
 numpy
+scikit-learn
